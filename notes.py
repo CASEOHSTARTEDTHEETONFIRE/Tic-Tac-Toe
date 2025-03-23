@@ -9,6 +9,7 @@
 # If the user guesses the number incorrectly, print "Lower" if the number you guess is higher than the random number
 # If the user guesses the number incorrectly, print "You lose" if the user guesses the number incorrectly 5 times. 
 points= 5
+questions=5
 import random 
 random_number = random.randint(1,1000)
 while True:
@@ -16,12 +17,15 @@ while True:
     if answer == random_number:
         print("You Win!")
         break
+    questions = 0
     if answer < random_number:
         print("womp womp. Guess higher.")
         points -= 1
+        questions -= 1
     if answer > random_number:
         print("womp womp. Guess lower.")
         points -= 1
+        questions -=1
 
     if points <= 0: 
         print("you lose womp womp. ")
